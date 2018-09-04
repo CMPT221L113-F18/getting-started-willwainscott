@@ -1,6 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
+		<style>
+			body {
+				background: orange;
+			}
+			
+			h1 {
+				text-align: center;
+				text-shadow: 2px 2px red;
+				color: yellow;
+			}
+			
+			p {
+				text-align: center;
+				color: blue;
+			}
+			
+			label {
+				color: green;
+			}
+			
+			output {
+				color: white;
+				font-size: 40px;
+			}
+		</style>
 		<meta charset = "utf-8">
 		<title>Heat Index Calculator</title>
 	</head>
@@ -17,7 +42,7 @@
 			</label>
 			<br>
 			<label>
-				Enter a percent Humidity from 0-100
+				Enter a percent Humidity from 0-100:
 				<input type = "number" id = "humidInput" value = "0" min = "0" max = "100">
 			</label>
 			<br>
@@ -40,10 +65,11 @@
 				Math.pow(temp,2) - 0.05481717 * Math.pow(humid,2) + 0.00122874 * Math.pow(temp,2) * humid + 0.00085282 * temp * 
 				Math.pow(humid,2) - 0.00000199 * Math.pow(temp,2) * Math.pow(humid,2);
 				
-				outputElem.innerHTML = "The Heat Index is " + heatIndex + ".";
+				heatIndex = Math.round(heatIndex);
 				
-				//to-do make index decimal shorter
+				outputElem.innerHTML = "The Heat Index is " + heatIndex + ".";
 			}
+			
 		</script>
 	</body>
 </html>
